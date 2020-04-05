@@ -1,0 +1,26 @@
+#content {
+    width: 400px;
+}
+
+label {
+    width: 150px;
+    float: left;
+}
+
+input, select {
+    margin-bottom: 5px;
+}
+
+select {
+    border-radius: 5px;
+    width: 150px;
+    background: white;
+}
+
+input[type = "submit"] {
+    border-radius: 5px;
+    background: white;
+    border: 1px solid gray;
+}
+
+
