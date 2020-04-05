@@ -51,7 +51,9 @@ if ($_SERVER["REQUEST_METHOD"] == "GET") {
     $str = "";
     switch ($lengthOfNumber) {
         case 3 :
-            $str .= readOneNumber($hundreds) . " hundred and ";
+            if ($hundreds > 0) {
+                $str .= readOneNumber($hundreds) . " hundred and ";
+            }
         case 2 :
             if ($tens == 1) {
                 if ($ones == 0) {
