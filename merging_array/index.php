@@ -8,12 +8,11 @@ for ($i = 0; $i < 10; $i++) {
 var_dump($arr1);
 var_dump($arr2);
 
-for ($j = 0; $j < count($arr1); $j++) {
-    array_push($arr3, $arr1[$j]);
+foreach ($arr1 as $value) {
+    array_push($arr3, $value);
 }
 
-for ($k = 0; $k <count($arr2); $k++) {
-    array_push($arr3,$arr2[$k]);
+foreach ($arr2 as $value) {
+    array_push($arr3, $value);
 }
-
 var_dump($arr3);
