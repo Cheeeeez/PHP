@@ -12,14 +12,11 @@ function calSumDiagonalLine($arr)
     }
     return $sum;
 }
-
-if ($_SERVER['REQUEST_METHOD'] == 'POST') {
-    $size = $_POST['size'];
     echo "<table style='width: 150px'>";
-    for ($i = 0; $i < $size; $i++) {
+    for ($i = 0; $i < 5; $i++) {
         echo "<tr>";
         $array[$i] = [];
-        for ($j = 0; $j < $size; $j++) {
+        for ($j = 0; $j < 5; $j++) {
             array_push($array[$i], random_int(1, 100));
             echo "<td>" . $array[$i][$j] . "</td>";
         }
@@ -27,8 +24,6 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     }
     echo "</table><br>";
     echo "<span>Tổng các số ở đường chéo chính là: " . calSumDiagonalLine($array) . "</span>";
-
-}
 
 ?>
 <!doctype html>
@@ -42,7 +37,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 </head>
 <body>
 <h2>Nhập kích thước ma trận </h2>
-<form method="post">
+<form method="get" action="matrix.php">
     <label>Kích thước ma trận:</label>
     <input type="text" name="size">
     <input type="submit" value="Xác nhận">
