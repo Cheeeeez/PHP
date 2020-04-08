@@ -1,13 +1,12 @@
 <?php
-$str = "hi, i stand here since afternoon";
-echo $str;
+$string = "hi, i stand here since afternoon";
+echo $string;
 echo "<br><br>";
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $char = $_POST["char"];
-    function countAppearTimes($keyword)
-    {
-        global $str;
+
+    function countAppearTimes($str,$keyword) {
         $count = 0;
         for ($i = 0; $i < strlen($str); $i++) {
             if ($str[$i] == $keyword) {
@@ -20,7 +19,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             return -1;
         }
     }
-
 }
 ?>
 <!doctype html>
@@ -38,8 +36,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     <input type="submit" value="Đếm">
 </form>
 <?php
-if (countAppearTimes($char) != -1) {
-    echo "Ký tự " . $char . " xuất hiện " . countAppearTimes($char) . " lần.";
+if (countAppearTimes($string,$char) != -1) {
+    echo "Ký tự " . $char . " xuất hiện " . countAppearTimes($string,$char) . " lần.";
 } else {
     echo "Ký tự " . $char . " không có trong chuỗi.";
 }
