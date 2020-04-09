@@ -1,13 +1,14 @@
 <?php
-include "QuadraticEquation.php";
 if ($_SERVER["REQUEST_METHOD"] == "GET") {
     $a = $_REQUEST["a"];
     $b = $_REQUEST["b"];
     $c = $_REQUEST["c"];
-    $quadraticEquation = new QuadraticEquation($a, $b, $c);
-    if (isset($a,$b,$c)) {
+    if (!empty($a) && !empty($b) && !empty($c)) {
+        include "QuadraticEquation.php";
+        $quadraticEquation = new QuadraticEquation($a, $b, $c);
         echo $quadraticEquation->displayRoot();
     }
+
 }
 ?>
 <!doctype html>
