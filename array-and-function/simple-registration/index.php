@@ -17,7 +17,7 @@ function saveJSONData($filename, $data)
     try {
         array_push($GLOBALS['users'], $data);
         $newJsonData = json_encode($GLOBALS['users']);
-        file_put_contents($filename, $newJsonData);
+        file_put_contents($filename, $newJsonData,FILE_APPEND);
         echo "Data is saved.";
     } catch (Exception $e) {
         echo "Error: ", $e->getMessage();

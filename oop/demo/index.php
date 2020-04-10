@@ -2,7 +2,8 @@
 include "class/Student.php";
 include "class/StudentManager.php";
 $studentManager = new StudentManager("data/data.json");
-$student = $studentManager->getStudents();
+$student = $studentManager->getDataJson();
+
 ?>
 <!doctype html>
 <html lang="en">

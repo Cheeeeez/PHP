@@ -10,5 +10,4 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $student = new Student($name, $email, $phone);
     $studentManager = new StudentManager("../data/data.json");
     $studentManager->add($student);
-    header("Location: ../index.php");
 }

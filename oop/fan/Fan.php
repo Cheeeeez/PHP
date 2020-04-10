@@ -11,36 +11,39 @@ class Fan {
     private $color = "blue";
 
 
+    public function getSLOW() {
+        return self::FAST;
+    }
+
+    public function getMEDIUM() {
+        return self::MEDIUM;
+    }
+
+    public function getFAST() {
+        return self::FAST;
+    }
+
+    public function setSpeed($speed){
+        $this->speed = $speed;
+    }
 
     public function getSpeed(){
         return $this->speed;
-    }
-
-    public function setSpeedSlow(){
-        $this->speed = self::SLOW;
-    }
-
-    public function setSpeedMedium(){
-        $this->speed = self::MEDIUM;
-    }
-
-    public function setSpeedFast(){
-        $this->speed = self::FAST;
     }
 
     public function isOn(){
         return $this->on;
     }
 
-    public function setOn($on){
-        $this->on = $on;
+    public function setOn($boolean){
+        $this->on = $boolean;
     }
 
     public function getRadius(){
         return $this->radius;
     }
 
-    public function setRadius($radius){
+    function setRadius($radius){
         $this->radius = $radius;
     }
 
