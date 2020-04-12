@@ -20,16 +20,16 @@ class EmployeeManager {
 
     public function getDataJson() {
         $dataJson = file_get_contents($this->file);
-        $data = json_decode($dataJson,true);
-        foreach ($data as $index => $value) {
-            $employee = new Employee($value["name"], $value["dateOfBirth"], $value["address"], $value["position"]);
+        $data = json_decode($dataJson);
+        foreach ($data as $index => $obj) {
+            $employee = new Employee($obj->name, $obj->dateOfBirth, $obj->address, $obj->position);
             self::$listEmployee[$index] = $employee;
         }
+        return self::$listEmployee;
     }
 
     public function saveDataToFile($data) {
         $dataJson = json_encode($data);
         file_put_contents($this->file, $dataJson);
     }
-
 }

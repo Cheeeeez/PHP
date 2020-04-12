@@ -2,7 +2,7 @@
 include("src/Rectangle.php");
 $width = 10;
 $height = 5;
-$rectangle = new Rectangle($width, $height);
+$rectangle = new oop\Rectangle($width, $height);
 
 echo "Width: " . $rectangle->getWidth();
 echo "<br>Height: " . $rectangle->getHeight();

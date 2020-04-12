@@ -1,4 +1,5 @@
 <?php
+namespace oop;
 class Rectangle
 {
     protected $width;
